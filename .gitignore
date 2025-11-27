@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+
+# Generated outputs (don't upload all images!)
+outputs/
+*.png
+*.jpg
+*.jpeg
+
+# Model cache (models are huge - don't upload!)
+.cache/
+models/
+*.safetensors
+*.ckpt
+
+# Streamlit
+.streamlit/
+
+# IDE - Cursor
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Environment
+.env

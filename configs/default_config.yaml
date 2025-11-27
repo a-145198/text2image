@@ -1,0 +1,30 @@
+# Default configuration for text-to-image generation
+
+model:
+  model_id: "runwayml/stable-diffusion-v1-5"
+  torch_dtype: "float32"  # Use float32 for MPS compatibility
+  use_safetensors: true
+
+device:
+  auto_detect: true  # Automatically detect MPS/CUDA/CPU
+  preferred: "mps"   # Preferred device if available
+
+generation:
+  width: 512
+  height: 512
+  num_inference_steps: 30
+  guidance_scale: 7.5
+  num_images_per_prompt: 1
+
+prompts:
+  default_negative: "lowres, bad quality, blurry, watermark, text, signature, username, cropped, worst quality, jpeg artifacts"
+
+storage:
+  output_dir: "outputs"
+  default_format: "PNG"
+  save_metadata: true
+  organize_by_date: true
+
+performance:
+  enable_attention_slicing: true  # Critical for 16GB RAM Macs
+  warmup_pass: true               # For MPS stability
