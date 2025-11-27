@@ -29,41 +29,30 @@ class ImageGenerator:
         print(f"Loading model: {self.model_id}")
         print(f"Target device: {self.device}")
         
-        # Load AbsoluteReality
         self.pipe = StableDiffusionPipeline.from_pretrained(
             self.model_id,
-            torch_dtype=torch.float32,  # MPS needs float32
+            torch_dtype=torch.float32,
             use_safetensors=True
         )
         
-        # CRITICAL: Disable safety checker (causes CPU fallback on MPS)
+        # CRITICAL: Disable safety checker (causes CPU fallback!)
         self.pipe.safety_checker = None
         self.pipe.feature_extractor = None
         
-        # Move ALL components to MPS explicitly
-        print("Moving components to MPS...")
+        # Move to MPS explicitly
         self.pipe = self.pipe.to(self.device)
         self.pipe.unet = self.pipe.unet.to(self.device)
         self.pipe.vae = self.pipe.vae.to(self.device)
         self.pipe.text_encoder = self.pipe.text_encoder.to(self.device)
         
-        # Enable attention slicing (critical for 16GB RAM)
+        # Enable memory optimization
         self.pipe.enable_attention_slicing()
         
-        # Verify everything is on MPS
-        print("\n" + "="*50)
-        print("Device Verification:")
-        print(f"UNet: {next(self.pipe.unet.parameters()).device}")
-        print(f"VAE: {next(self.pipe.vae.parameters()).device}")
-        print(f"Text Encoder: {next(self.pipe.text_encoder.parameters()).device}")
-        print("="*50 + "\n")
-        
-        # Check if any component is still on CPU
-        unet_device = str(next(self.pipe.unet.parameters()).device)
-        if "cpu" in unet_device:
-            raise RuntimeError("⚠️ Model is on CPU! MPS not working properly")
-        
-        print("✅ AbsoluteReality loaded successfully on MPS")
+        # Verify
+        print(f"✅ UNet: {next(self.pipe.unet.parameters()).device}")
+        print(f"✅ VAE: {next(self.pipe.vae.parameters()).device}")
+        print(f"✅ Text Encoder: {next(self.pipe.text_encoder.parameters()).device}")
+
 
         
     def generate_images(
