@@ -310,7 +310,31 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/text2image-project.git
 ### Main Interface
 ![Interface](examples/screenshots/ui.png)
 
-### Sample Outputs
-![Sample 1](examples/sample_outputs/sample_1.png)
-![Sample 2](examples/sample_outputs/sample_2.png)
+## 📸 Sample Outputs
+
+Generated using AbsoluteReality and Stable Diffusion v1.5 models, demonstrating three difficulty levels:
+
+### Easy: Simple Subject (20 steps, ~25s)
+![Easy Sample](examples/sample_outputs/easy_apple.png)
+
+**Prompt:** `a red apple on a wooden table, natural lighting`  
+**Model:** Stable Diffusion v1.5 | **Steps:** 20 | **Resolution:** 512×512
+
+---
+
+### Medium: Detailed Scene (30 steps, ~40s)
+![Medium Sample](examples/sample_outputs/medium_japanese_garden.png)
+
+**Prompt:** `a serene Japanese garden with cherry blossoms, stone lanterns, koi pond, misty morning light, professional photography, highly detailed`  
+**Model:** AbsoluteReality | **Steps:** 30 | **Resolution:** 512×512
+
+---
+
+### Complex: Advanced Composition (40 steps, ~90s)
+![Complex Sample](examples/sample_outputs/complex_cyberpunk_city.png)
+
+**Prompt:** `epic futuristic cyberpunk city at night, neon lights reflecting on wet streets, flying cars with glowing trails, holographic advertisements, towering skyscrapers, dramatic volumetric lighting, cinematic wide shot, ultra detailed, 8K, masterpiece`  
+**Model:** AbsoluteReality | **Steps:** 40 | **Resolution:** 768×768
+
+---
 ```
