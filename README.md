@@ -305,10 +305,6 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/text2image-project.git
 
 3. **Add screenshots** (after generating some images):
 ```markdown
-## 📸 Screenshots
-
-### Main Interface
-![Interface](examples/screenshots/ui.png)
 
 ## 📸 Sample Outputs
 
