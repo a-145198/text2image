@@ -1,3 +1,14 @@
+---
+title: Text to Image Generator
+emoji: 🎨
+colorFrom: purple
+colorTo: pink
+sdk: streamlit
+sdk_version: 1.28.0
+app_file: src/app_streamlit.py
+pinned: false
+---
+
 # Local Open-Source Text-to-Image Generator
 
 A complete text-to-image generation system using Stable Diffusion, optimized for Apple Silicon (M1/M2/M3/M4) with MPS backend support.
@@ -280,8 +291,6 @@ For issues or questions:
 3. Review Hugging Face docs: https://huggingface.co/docs/diffusers
 
 ---
-
-**Created for Talrn.com ML Internship Task**
 
 *Transform your imagination into reality with AI* 🎨✨
 ```
