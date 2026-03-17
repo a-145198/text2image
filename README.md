@@ -42,7 +42,7 @@ A complete text-to-image generation system using Stable Diffusion, optimized for
 
 ### Step 1: Clone Repository
 ```
-git clone https://github.com/yourusername/text2image-project.git
+git clone https://github.com/a-145198/text2image-project.git
 cd text2image-project
 ```
 
@@ -296,24 +296,6 @@ For issues or questions:
 ```
 
 ***
-
-## **Quick Customization**
-
-Before pushing to GitHub, update these sections:
-
-1. **Line 35**: Change `yourusername` to your actual GitHub username:
-```markdown
-git clone https://github.com/YOUR_GITHUB_USERNAME/text2image-project.git
-```
-
-2. **Add badges** (optional, after first push):
-```markdown
-![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/text2image-project)
-![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/text2image-project)
-```
-
-3. **Add screenshots** (after generating some images):
-```markdown
 
 ## 📸 Sample Outputs
 
